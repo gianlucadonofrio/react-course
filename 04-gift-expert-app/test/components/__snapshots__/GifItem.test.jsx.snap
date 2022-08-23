@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <GifItem /> Debe hace match con el Snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Dragon Ball"
+      src="https://dragon-ball/dragon-ball.jpg"
+    />
+    <p>
+      Dragon Ball
+    </p>
+  </div>
+</div>
+`;
