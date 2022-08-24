@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import Swal from "sweetalert2";
 import { useCalendarStore } from "../../hooks/useCalendarStore";
 
 export const FabDelete = () => {
@@ -6,7 +7,16 @@ export const FabDelete = () => {
   const { isDateModalOpen } = useSelector((state) => state.ui);
 
   const handleDelete = () => {
-    startDeletingEvent();
+    Swal.fire({
+      title: "¿Estas seguro que quieres eliminar el evento?",
+      showCancelButton: true,
+      confirmButtonText: "SI!",
+      denyButtonText: `NO!`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        startDeletingEvent();
+      }
+    });
   };
   return (
     <button
