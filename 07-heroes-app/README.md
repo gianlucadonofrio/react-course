@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Web
+<a href="https://react-course-sepia.vercel.app/marvel" target="_blank">Link aquí</a>
+
+![Index Png](photos/screen1.png)
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

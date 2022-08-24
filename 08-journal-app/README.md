@@ -1,7 +1,7 @@
 # Journal App 📝
 
 ## Live Web
-<a href="https://react-advance-giandonofrio.vercel.app/" target="_blank">Link aquí</a>
+<a href="https://journal-app-beige.vercel.app" target="_blank">Link aquí</a>
 
 ![Index Png](photos/screen1.png)
 
