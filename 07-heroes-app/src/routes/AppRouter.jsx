@@ -1,7 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import { LoginPage } from "../auth/pages";
-import { HeroesRouters } from "../heroes";
-import { PrivateRoute, PublicRoute } from "./index";
+import { Routes, Route } from 'react-router-dom';
+import { LoginPage } from '../auth/pages';
+import { HeroesRouters } from '../heroes';
+import { PrivateRoute, PublicRoute } from './index';
 
 export const AppRouter = () => {
   return (

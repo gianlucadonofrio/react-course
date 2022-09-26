@@ -54,7 +54,7 @@ export const SearchPage = () => {
             <></>
           ) : (
             heroes.length === 0 && (
-              <div className="alert alert-danger animate__animated animate__fadeIn">
+              <div className="alert alert-danger animate__animated animate__fadeIn" aria-label="alert-danger"> 
                 No results found with <b>{q}</b>
               </div>
             )
