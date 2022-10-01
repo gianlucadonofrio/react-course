@@ -3,9 +3,9 @@ import {
   logoutFirebase,
   registerUserWithEmailPassword,
   signInWithGoogle,
-} from "../../firebase/providers";
-import { clearNotesLogout } from "../journal/journalSlide";
-import { checkingCredentials, logout, login } from "./authSlide";
+} from '../../firebase/providers';
+import { clearNotesLogout } from '../journal/journalSlide';
+import { checkingCredentials, logout, login } from './authSlide';
 
 export const checkingAuthentication = () => {
   return async (dispatch) => {

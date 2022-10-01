@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const journalSlice = createSlice({
-  name: "journal",
+  name: 'journal',
   initialState: {
     isSaving: false,
-    messageSave: "",
+    messageSave: '',
     notes: [],
     active: null,
   },
@@ -18,14 +18,14 @@ export const journalSlice = createSlice({
     },
     setActiveNote: (state, action) => {
       state.active = action.payload;
-      state.messageSave = "";
+      state.messageSave = '';
     },
     setNotes: (state, action) => {
       state.notes = action.payload;
     },
     setIsSaving: (state) => {
       state.isSaving = true;
-      state.messageSave = "";
+      state.messageSave = '';
     },
     updateNote: (state, action) => {
       state.isSaving = false;
@@ -43,7 +43,7 @@ export const journalSlice = createSlice({
     },
     clearNotesLogout: (state) => {
       state.isSaving = false;
-      state.messageSave = "";
+      state.messageSave = '';
       state.notes = [];
       state.active = null;
     },

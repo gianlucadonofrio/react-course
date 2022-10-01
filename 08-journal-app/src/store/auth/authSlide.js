@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState: {
-    status: "checking",
+    status: 'checking',
     uid: null,
     email: null,
     displayName: null,
@@ -12,7 +12,7 @@ export const authSlice = createSlice({
   },
   reducers: {
     login: (state, { payload }) => {
-      state.status = "authenticated";
+      state.status = 'authenticated';
       state.uid = payload.uid;
       state.email = payload.email;
       state.displayName = payload.displayName;
@@ -20,7 +20,7 @@ export const authSlice = createSlice({
       state.errorMessage = null;
     },
     logout: (state, { payload }) => {
-      state.status = "not-authenticated";
+      state.status = 'not-authenticated';
       state.uid = null;
       state.email = null;
       state.displayName = null;
@@ -28,7 +28,7 @@ export const authSlice = createSlice({
       state.errorMessage = payload?.errorMessage;
     },
     checkingCredentials: (state) => {
-      state.status = "checking";
+      state.status = 'checking';
     },
   },
 });

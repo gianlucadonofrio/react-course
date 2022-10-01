@@ -1,5 +1,5 @@
-import { Link as RouterLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Link as RouterLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Alert,
   Button,
@@ -7,26 +7,26 @@ import {
   Link,
   TextField,
   Typography,
-} from "@mui/material";
-import { Google } from "@mui/icons-material";
-import { AuthLayout } from "../layout/AuthLayout";
-import { useForm } from "../../hooks";
+} from '@mui/material';
+import { Google } from '@mui/icons-material';
+import { AuthLayout } from '../layout/AuthLayout';
+import { useForm } from '../../hooks';
 import {
   startGoogleSignIn,
   startLoginWithEmailPassword,
-} from "../../store/auth";
-import { useMemo } from "react";
+} from '../../store/auth';
+import { useMemo } from 'react';
 
 const formData = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 export const LoginPage = () => {
   const dispatch = useDispatch();
   const { status, errorMessage } = useSelector((state) => state.auth);
 
   const { email, password, onInputChange } = useForm(formData);
-  const isAuthenticating = useMemo(() => status === "checking", [status]);
+  const isAuthenticating = useMemo(() => status === 'checking', [status]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +39,7 @@ export const LoginPage = () => {
   return (
     <AuthLayout title="Iniciar sesión">
       <form
+        aria-label="submit-form"
         onSubmit={onSubmit}
         className="animate__animated animate__fadeIn animate__faster"
       >
@@ -60,12 +61,15 @@ export const LoginPage = () => {
               type="password"
               placeholder="Contraseña"
               fullWidth
+              inputProps={{
+                'data-testid': 'password',
+              }}
               name="password"
               value={password}
               onChange={onInputChange}
             />
           </Grid>
-          <Grid container sx={{ mt: 1 }} display={!!errorMessage ? "" : "none"}>
+          <Grid container sx={{ mt: 1 }} display={!!errorMessage ? '' : 'none'}>
             <Grid item xs={12}>
               <Alert severity="error">{errorMessage}</Alert>
             </Grid>
@@ -87,6 +91,7 @@ export const LoginPage = () => {
                 fullWidth
                 onClick={onGoogleSignIn}
                 disabled={isAuthenticating}
+                aria-label="google-btn"
               >
                 <Google />
                 <Typography sx={{ ml: 1 }}>Login</Typography>
