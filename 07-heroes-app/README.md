@@ -1,14 +1,14 @@
-# Getting Started with Create React App
+# Heroes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link a la app
 
-## Live Web
-<a href="https://react-course-sepia.vercel.app/marvel" target="_blank">Link aquí</a>
+[https://clever-alfajores-49cc11.netlify.app/marvel](https://clever-alfajores-49cc11.netlify.app/marvel)
 
 ![Index Png](photos/screen1.png)
 
+# Getting Started with Create React App
 
-
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

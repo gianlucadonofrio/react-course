@@ -1,11 +1,10 @@
 # Journal App 📝
 
-## Live Web
-<a href="https://journal-app-beige.vercel.app" target="_blank">Link aquí</a>
+## Link a la app
+
+[https://calendar-api-nine.vercel.app](https://calendar-api-nine.vercel.app)
 
 ![Index Png](photos/screen1.png)
-
-
 
 # Getting Started with Create React App
 

@@ -1,3 +1,14 @@
+# Calendar MERN App
+
+## Test user
+
+-   email: `test@gmail.com`
+-   password: `test01`
+
+## Link a la app
+
+[https://calendar-api-nine.vercel.app](https://calendar-api-nine.vercel.app)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
