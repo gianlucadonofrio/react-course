@@ -1,6 +1,6 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography } from '@mui/material';
 
-export const AuthLayout = ({ children, title = "" }) => {
+export const AuthLayout = ({ children, title = '' }) => {
   return (
     <Grid
       container
@@ -8,7 +8,7 @@ export const AuthLayout = ({ children, title = "" }) => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }}
+      sx={{ minHeight: '100vh', backgroundColor: 'primary.main', padding: 4 }}
     >
       <Grid
         item
@@ -16,7 +16,7 @@ export const AuthLayout = ({ children, title = "" }) => {
         xs={3}
         sx={{
           width: { sm: 450 },
-          backgroundColor: "white",
+          backgroundColor: 'white',
           padding: 3,
           borderRadius: 2,
         }}

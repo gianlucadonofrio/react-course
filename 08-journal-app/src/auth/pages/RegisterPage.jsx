@@ -1,25 +1,25 @@
-import { Alert, Button, Grid, TextField, Typography } from "@mui/material";
-import { useMemo } from "react";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Alert, Button, Grid, TextField, Typography } from '@mui/material';
+import { useMemo } from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Link } from "react-router-dom";
-import { useForm } from "../../hooks";
-import { startCreatingUserWithEmailPassword } from "../../store/auth/thunks";
-import { AuthLayout } from "../layout/AuthLayout";
+import { Link } from 'react-router-dom';
+import { useForm } from '../../hooks';
+import { startCreatingUserWithEmailPassword } from '../../store/auth/thunks';
+import { AuthLayout } from '../layout/AuthLayout';
 
 const formData = {
-  email: "",
-  password: "",
-  displayName: "",
+  email: '',
+  password: '',
+  displayName: '',
 };
 const formValidations = {
-  email: [(value) => value.includes("@"), "El correo debe ser valido"],
+  email: [(value) => value.includes('@'), 'El correo debe ser valido'],
   password: [
     (value) => value.length >= 6,
-    "La contraseña debe tenes mas de 6 letras",
+    'La contraseña debe tenes mas de 6 letras',
   ],
-  displayName: [(value) => value.length >= 1, "El nombre es obligatorio"],
+  displayName: [(value) => value.length >= 1, 'El nombre es obligatorio'],
 };
 export const RegisterPage = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -27,7 +27,7 @@ export const RegisterPage = () => {
 
   const { status, errorMessage } = useSelector((state) => state.auth);
   const isCheckingAuthentication = useMemo(
-    () => status === "checking",
+    () => status === 'checking',
     [status]
   );
 
@@ -98,7 +98,7 @@ export const RegisterPage = () => {
           </Grid>
 
           <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
-            <Grid item xs={12} display={!!errorMessage ? "" : "none"}>
+            <Grid item xs={12} display={!!errorMessage ? '' : 'none'}>
               <Alert severity="error">{errorMessage}</Alert>
             </Grid>
             <Grid item xs={12}>
