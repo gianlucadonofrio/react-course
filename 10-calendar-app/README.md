@@ -7,7 +7,7 @@
 
 ## Link a la app
 
-[https://calendar-api-nine.vercel.app](https://calendar-api-nine.vercel.app)
+[https://calendar-app-sooty.vercel.app/](https://calendar-app-sooty.vercel.app/)
 
 # Getting Started with Create React App
 
