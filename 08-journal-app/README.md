@@ -1,8 +1,13 @@
 # Journal App 📝
 
+## Test user
+
+-   email: `test@gmail.com`
+-   password: `test01`
+
 ## Link a la app
 
-[https://calendar-api-nine.vercel.app](https://calendar-api-nine.vercel.app)
+[https://journal-app-chi-dusky.vercel.app/](https://journal-app-chi-dusky.vercel.app/)
 
 ![Index Png](photos/screen1.png)
 
