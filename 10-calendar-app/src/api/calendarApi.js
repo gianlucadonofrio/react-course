@@ -8,6 +8,9 @@ calendarApi.interceptors.request.use((config) => {
   config.headers = {
     ...config.headers,
     'x-token': localStorage.getItem('token'),
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
   };
 
   return config;
