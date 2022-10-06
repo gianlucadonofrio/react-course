@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore/lite';
 
 const firebaseConfig = {};
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') {
   firebaseConfig.apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
   firebaseConfig.authDomain = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
   firebaseConfig.projectId = process.env.REACT_APP_FIREBASE_PROJECT_ID;
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
   firebaseConfig.appId = process.env.FIREBASE_APP_ID;
 }
 
-console.log( process.env);
+console.log(process.env);
 export const FirebaseApp = initializeApp(firebaseConfig);
 export const FirebaseAuth = getAuth(FirebaseApp);
 export const FirebaseDB = getFirestore(FirebaseApp);
