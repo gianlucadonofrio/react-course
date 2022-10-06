@@ -1,40 +1,41 @@
-import { addHours, differenceInSeconds } from "date-fns";
-import { useEffect, useMemo, useState } from "react";
-import DatePicker, { registerLocale } from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import es from "date-fns/locale/es";
-import Modal from "react-modal";
-import Swal from "sweetalert2";
-import "sweetalert2/dist/sweetalert2.min.css";
-import { useCalendarStore, useUiStore } from "../../hooks";
+import { addHours, differenceInSeconds } from 'date-fns';
+import { useEffect, useMemo, useState } from 'react';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import es from 'date-fns/locale/es';
+import Modal from 'react-modal';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import { useCalendarStore, useUiStore } from '../../hooks';
 
-registerLocale("es", es);
+registerLocale('es', es);
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
   },
 };
-Modal.setAppElement("#root");
-
+if (process.env.REACT_APP_MODE !== 'test') {
+  Modal.setAppElement('#root');
+}
 export const CalendarModal = () => {
   const { isDateModalOpen, closeDateModal } = useUiStore();
   const { activeEvent, startSavingEvent } = useCalendarStore();
   const [formValues, setFormValues] = useState({
-    title: "",
-    notes: "",
+    title: '',
+    notes: '',
     start: new Date(),
     end: addHours(new Date(), 2),
   });
   const [formSubmiteed, setFormSubmiteed] = useState(false);
   const titleClass = useMemo(() => {
-    if (!formSubmiteed) return "";
-    return formValues.title.length > 0 ? "" : "is-invalid";
+    if (!formSubmiteed) return '';
+    return formValues.title.length > 0 ? '' : 'is-invalid';
   }, [formValues.title, formSubmiteed]);
 
   useEffect(() => {
@@ -67,9 +68,9 @@ export const CalendarModal = () => {
     const diff = differenceInSeconds(formValues.end, formValues.start);
     if (isNaN(diff) || diff < +0) {
       Swal.fire(
-        "Fecha no valida",
-        "La fecha de finalización debe ser mayor a la de inicio",
-        "error"
+        'Fecha no valida',
+        'La fecha de finalización debe ser mayor a la de inicio',
+        'error'
       );
       return;
     }
@@ -96,7 +97,7 @@ export const CalendarModal = () => {
           <DatePicker
             selected={formValues.start}
             className="form-control"
-            onChange={(e) => onDateChange(e, "start")}
+            onChange={(e) => onDateChange(e, 'start')}
             dateFormat="Pp"
             showTimeSelect
             locale={es}
@@ -110,7 +111,7 @@ export const CalendarModal = () => {
             selected={formValues.end}
             className="form-control"
             minDate={formValues.start}
-            onChange={(e) => onDateChange(e, "end")}
+            onChange={(e) => onDateChange(e, 'end')}
             dateFormat="Pp"
             showTimeSelect
             locale={es}
