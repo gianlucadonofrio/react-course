@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-
+console.log(process.env);
 const calendarApi = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
@@ -8,7 +8,7 @@ const calendarApi = axios.create({
 calendarApi.interceptors.request.use((config) => {
   config.headers = {
     ...config.headers,
-    "x-token": localStorage.getItem("token"),
+    'x-token': localStorage.getItem('token'),
   };
 
   return config;
